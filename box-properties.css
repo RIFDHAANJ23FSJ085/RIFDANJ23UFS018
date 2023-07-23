@@ -1,0 +1,46 @@
+/*** CSS3: VQS Code 10.03 ***/
+/*** box-properties.css ***/
+
+header { 
+    width: 100%;
+    height: 135px;
+} 
+		
+h1 {
+    width: 95;
+    max-width: 980px;
+    min-width: 760px;
+}
+	
+article {
+max-width: 980px;
+min-width: 660px;
+}
+	
+aside {
+width: 300px;
+height: 400px;
+}
+h2 + p:first-letter{
+    float: left;
+margin: .2em .1em .1em;
+}
+.floatleft{
+    float: left;
+}
+.floatright{
+    float: right;
+}
+figure{
+    margin: .5em;
+    border: 6px double blue;
+    padding: 10px;
+}
+figcaption{
+    border-top: 2px solid blue;
+    display: block;
+}
+
+
+
+
