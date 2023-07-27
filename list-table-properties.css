@@ -1,0 +1,30 @@
+/*** list-table-properties.css ***/
+
+ul {
+	list-style: circle inside; }
+ol.list {
+	list-style: none url(../images/chrome/bullet-01.png) inside; }
+table {
+	table-layout: auto;
+	border-spacing: 8px;
+	border-collapse: separate;
+	empty-cells: hide;
+	caption-side: top;
+	width: 75%;
+	margin: 40px auto; }
+tr {
+	font-size: 1.25em; }
+td {
+	vertical-align: top;
+	padding: .5em;
+	background-color: rgba(200, 200, 180,.25);
+	border: 1px solid rgb(200, 200, 180); }
+table caption {
+	font: normal 3em 'TitleCopy', Corbel, Helvetica, Arial, sans-serif; }
+table thead {
+	font-size: 1em;
+	font-style: normal;
+	font-variant: small-caps;
+	text-shadow: 0px 1px 1px rgba(255,255,255,.6), 0px -1px 1px rgba(0,0,0,.6); }
+article {
+	padding: 100px 20px; }

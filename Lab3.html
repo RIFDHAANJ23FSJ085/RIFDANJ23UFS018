@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Draw Something..</title>
+
+    <script>
+        function drawOnCanvas() {
+          var c=document.getElementById("c");
+          var ctx=c.getContext("2d") ; 
+          ctx.fillStyle ="#363531"; // fillStyle Property of the context objetct to set the fill color to (green)
+        //   ctx.fillRect(50,50,200,150); //(x,y) width (x,y) height
+        ctx.fillRect(90,50,210,150);
+         
+          ctx.moveTo(300,120);
+          ctx.lineTo(90,120);
+
+          ctx.stroke();
+          ctx.strokeStyle = "#ffd700";
+          
+          ctx.moveTo(190,50);
+          ctx.lineTo(190,200);
+
+          ctx.stroke();
+          ctx.strokeStyle = "#ffd700";
+        //   ctx.fillRect(50,50,500,150);
+        //   ctx.moveTo(250,50);
+        //   ctx.moveTo(50,200);
+
+        //   ctx.stroke();
+        //   ctx.strokeStyle = "FF0000";
+          
+          
+        }
+
+        function drawEngland() {
+          var c=document.getElementById("c");
+          var ctx=c.getContext("2d") ; 
+          ctx.fillStyle ="#ffffff"; // fillStyle Property of the context objetct to set the fill color to (green)
+        //   ctx.fillRect(50,50,200,150); //(x,y) width (x,y) height
+        ctx.fillRect(90,50,210,150);
+         
+          ctx.moveTo(300,120);
+          ctx.lineTo(90,120);
+
+          ctx.stroke();
+          ctx.strokeStyle = "#cd0001";
+          
+          ctx.moveTo(190,50);
+          ctx.lineTo(190,200);
+
+          ctx.stroke();
+          ctx.strokeStyle = "#cd0001";
+        //   ctx.fillRect(50,50,500,150);
+        //   ctx.moveTo(250,50);
+        //   ctx.moveTo(50,200);
+
+        //   ctx.stroke();
+        //   ctx.strokeStyle = "FF0000";
+          
+          
+        }
+
+        function drawCross() {
+            var d=document.getElementById("c");
+            var dtx=d.getContext("2d");
+            dtx.fillStyle="#00FF00";
+            dtx.fillRect(50,50,200,150);
+
+            dtx.moveTo(250,200);
+            dtx.lineTo(50,50);
+
+            dtx.stroke();
+            dtx.strokeStyle="#8217";
+
+            dtx.moveTo(50,200);
+            dtx.lineTo(250,50);
+           
+            dtx.stroke();
+            dtx.strokeStyle="#8217";
+
+        }
+    </script>
+</head>
+<body onload="drawCross()">
+
+<!-- <body onload="drawCross();" > -->
+<canvas id="c" width="350" height="300" 
+style="border: 1px solid #c3c3;"
+></canvas>
+</body>
+</html>

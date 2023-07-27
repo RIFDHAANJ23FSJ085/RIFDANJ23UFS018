@@ -1,0 +1,20 @@
+/*** font-properties.css ***/
+
+         
+body {	 
+    font-family: 'BodyCopy' Constantia,Georgia, 'Times New Roman', Times, serif ;
+}
+h1, h2, .author {   
+    font-family: 'TitleCopy' Corbel,Arial, Helvetica, sans-serif;
+}
+.author{
+    text-transform: uppercase;
+}
+h2.chaptertitle {	 
+
+    font-family: 'TitleCopy' Corbel,Arial, Helvetica, sans-serif;
+} 
+
+h1{
+    font-style: italic;
+}

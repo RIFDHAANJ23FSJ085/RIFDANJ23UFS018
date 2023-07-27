@@ -1,0 +1,88 @@
+/*** font-properties.css ***/
+
+@font-face {
+    font-family: 'BodyCopy';
+    src: url('../fonts/DVS/DejaVuSerif.eot');
+    src: url('../fonts/DVS/DejaVuSerif.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/DVS/DejaVuSerif.woff') format('woff'),
+         url('../fonts/DVS/DejaVuSerif.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal; }
+@font-face {
+    font-family: 'BodyCopy';
+    src: url('../fonts/DVS/DejaVuSerif-Bold.eot');
+    src: url('../fonts/DVS/DejaVuSerif-Bold.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/DVS/DejaVuSerif-Bold.woff') format('woff'),
+         url('../fonts/DVS/DejaVuSerif-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal; }
+@font-face {
+    font-family: 'BodyCopy';
+    src: url('../fonts/DVS/DejaVuSerif-Italic.eot');
+    src: url('../fonts/DVS/DejaVuSerif-Italic.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/DVS/DejaVuSerif-Italic.woff') format('woff'),
+         url('../fonts/DVS/DejaVuSerif-Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic; }
+@font-face {
+    font-family: 'BodyCopy';
+    src: url('../fonts/DVS/DejaVuSerif-BoldItalic.eot');
+    src: url('../fonts/DVS/DejaVuSerif-BoldItalic.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/DVS/DejaVuSerif-BoldItalic.woff') format('woff'),
+         url('../fonts/DVS/DejaVuSerif-BoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic; }
+@font-face {
+    font-family: 'BodyCopy';
+    src: url('../fonts/DVS/DejaVuSerifCondensed-BoldItalic.eot');
+    src: url('../fonts/DVS/DejaVuSerifCondensed-BoldItalic.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/DVS/DejaVuSerifCondensed-BoldItalic.woff') format('woff'),
+         url('../fonts/DVS/DejaVuSerifCondensed-BoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+    font-stretch: condensed; }
+@font-face {
+    font-family: 'TitleCopy';
+    src: url('../fonts/LTG/littletroublegirl.eot');
+    src: url('../fonts/LTG/littletroublegirl.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/LTG/littletroublegirl.woff') format('woff'),
+         url('../fonts/LTG/littletroublegirl.ttf') format('truetype'); }
+body {
+	font: normal 100%/1.5 'BodyCopy', Constantia, Georgia, "Times New Roamn", serif;
+	font-size-adjust: .5; }
+h1 {
+	font: italic bold small-caps 5em/.9 'TitleCopy', Corbel, Helvetica, Arial, sans-serif; }
+h2 {
+	font-size: 1em;
+	font-style: normal;
+	font-variant: small-caps; }
+h2 cite{
+	font-size: 1.5em;
+	font-variant: normal;	
+	font-weight: bold;
+    font-style: italic;
+	font-stretch: condensed;
+ }
+h2 .chaptertitle {	
+	font: normal 3em 'TitleCopy', Corbel, Helvetica, Arial, sans-serif; }
+em {	
+	font-size: 1.1em; }
+figcaption {
+	font-size: .875em;
+	font-style: italic; 
+	font-stretch: condensed;
+	font-weight: bold; 
+}
+article p:first-of-type:first-letter {
+	font-size: 5em;
+}
+
+footer a {
+	font-size: 1em;
+}
+
+
+hgroup h2 {
+	margin-right: 2em; 
+}
+

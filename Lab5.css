@@ -1,0 +1,43 @@
+/*-- CSS3: VQS Code 03.03 --*/
+
+
+body { 
+	padding: 220px 0 0 180px; }
+h1 { 	
+	color: green;	
+	font-size: 3em;
+	font-weight: bold; }
+h1 .chaptertitle { 
+	color: blue;
+	font-size: .5em;
+	font-weight: normal; }
+p {
+	color:rgb(153, 153, 153);
+	font-family: perpetua, georgia, serif ;
+	font-size: 1.5em;
+	line-height: 3em; }
+.chaptertitle{
+	font-family: perpetua, georgia, serif ;
+	font-variant: small-caps;
+	letter-spacing: .1em;
+}
+a.chaptertitle{
+	font-size: 2em;
+	font-style: italic;
+}
+a:link{
+	color: darkred;
+	border-bottom: 1px solid red;
+}
+a:visited{
+	color: darkred;
+	border-bottom: 1px dashed red;
+}
+a:hover{
+	color: blueviolet;
+	border-bottom: 1px solid pink;
+}
+a:active{
+	color: darkkhaki;
+	border-bottom: 1px solid pink;
+}
