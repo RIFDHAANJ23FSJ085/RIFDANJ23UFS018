@@ -1,0 +1,80 @@
+<html>
+    <head>
+        <script>
+            function car(){
+                this.getCar=function(){
+                    return this.name;
+                }
+            }
+
+            function LuxuryCar(name){
+                this.name=name;
+            }
+
+            function SportsCar(name){
+                return this.name;
+            }
+
+            var cr=new car();
+            LuxuryCar.prototype=cr;
+            LuxuryCar.prototype.constructor=LuxuryCar;
+
+            SportsCar.prototype=cr;
+            SportsCar.prototype.constructor=SportsCar;
+
+            function CarManufacture(){
+                this.makeCar=function(){
+                    if(this.name=="SportsCar"){
+                        return new SportsCar("Bugatti Chiron.");
+                    }else{
+                        return new LuxuryCar("LuxuryCar");
+                    }
+                }
+            }
+
+            function SkodaCarManufacture(name){
+                this.name=name;
+            }
+
+            function BMWCarManufacture(name){
+                this.name=name;
+            }
+
+            var cm=new CarManufacture();
+
+            SkodaCarManufacture.prototype=cm;
+            SkodaCarManufacture.prototype.constructor=SkodaCarManufacture;
+
+            BMWCarManufacture.prototype=cm;
+            BMWCarManufacture.prototype.constructor=BMWCarManufacture;
+
+            function CarShowRoom(){
+                this.sellcar=function(){
+                    return this.factory.makeCar();
+                }
+            }
+
+            function BoomCars(factory){
+                this.factory=factory;
+            }
+            function A3ShowRoom(factory){
+                this.factory=factory;
+            }
+
+            var cs=new CarShowRoom();
+
+            BoomCars.prototype=cs;
+            BoomCars.prototype.constructor=BoomCars;
+
+            A3ShowRoom.prototype=cs;
+            A3ShowRoom.prototype.constructor=A3ShowRoom;
+
+            var SKM=new BMWCarManufacture("SportsCar");
+            var boom=new A3ShowRoom(SKM);
+            var car=boom.sellcar();
+            console.log(car);
+            console.log(car.getCar());
+
+        </script>
+    </head>
+</html>

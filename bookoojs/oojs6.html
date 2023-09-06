@@ -1,0 +1,68 @@
+<html>
+    <head>
+        <script>
+            function Shoe(){
+                this.getName=function(){
+                    return this.name;
+                }
+            }
+            function LeatherShoe(name){
+                this.name=name;
+            }
+            function SportsShoe(name){
+                this.name=name;
+            }
+            var shoe=new Shoe();
+            LeatherShoe.prototype=shoe;
+            LeatherShoe.prototype.constructor=LeatherShoe;
+            SportsShoe.prototype=shoe;
+            SportsShoe.prototype.constructor=SportsShoe;
+            function ShoeFactory(){
+                this.makeShoe=function(){
+                    if(this.name=="sports"){
+                        return new SportsShoe("sportsshoe");
+                    }
+                    else{
+                        return new LeatherShoe("leathershoe..");//making shoe part of factory
+                    }
+                }
+            }
+            function BataShoeFactory(name){
+                this.name=name;
+            }
+            function LakhaniShoeFactory(name){
+                this.name=name;
+            }
+            var sf=new ShoeFactory();
+
+            BataShoeFactory.prototype=sf;
+            BataShoeFactory.prototype.constructor=BataShoeFactory;
+            LakhaniShoeFactory.prototype=sf;
+            LakhaniShoeFactory.prototype.constructor=LakhaniShoeFactory;
+            
+            function ShoeShop(){
+                this.sellShoe=function(){
+                    return this.factory.makeShoe();
+                }
+            }
+            function AbcShoeShop(factory){
+                this.factory=factory;
+            }
+            var ss=new ShoeShop();
+            AbcShoeShop.prototype=ss;
+            AbcShoeShop.prototype.constructor=AbcShoeShop;
+            //Now scenario
+            var bsf=new BataShoeFactory("leather");
+            var abcshop=new AbcShoeShop(bsf);//dependency injection - giving knowledge of factory to shop
+            var shoe=abcshop.sellShoe();
+            console.log(shoe);
+            console.log(shoe.getName());
+            function XyzShoeShop(factory){
+                this.factory=factory;
+            }
+            var ss=new ShoeShop();
+            XyzShoeShop.prototype=ss;
+            XyzShoeShop.prototype.constructor=XyzShoeShop;
+        </script>
+    </head>
+</html>

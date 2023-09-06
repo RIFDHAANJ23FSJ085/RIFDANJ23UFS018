@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        function Game(name){
+            this.name=name;
+            this.getGameName=function(){
+                return this.name;
+            }
+        }
+
+        var Cristiano=new Game("FootBall");
+        console.log(Cristiano.getGameName());
+
+        var messi=new Cristiano.constructor("Barcelona");
+        console.log(messi.getGameName());
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

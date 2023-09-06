@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+
+        var obj=new Object();
+        obj.name="golden Touch";
+        obj.getName=function(){
+            return this.name;
+        }
+
+        // using literal way
+
+        var human={
+            name:".....Literal Way Name",
+            getName:function(){
+                return this.name;
+            }
+        }
+
+        console.log(human.getName());
+
+        //factory Function
+
+        var myhuman=function(){
+            var obj=new Object();
+            obj.name="factory way of create",
+            obj.getName=function(){
+                return this.name;
+            }
+            return obj;
+        }
+
+        var h=myhuman();
+        console.log(h.getName());
+
+        var myHuman2=function(){
+            this.name="golden touch factory function 2"
+            this.getName=function(){
+                return this.name;
+            }
+            return this;
+        }
+
+        var h2=myHuman2();
+        console.log(h.getName());
+
+        var myhuman3=function(name){
+            this.name=name;
+            this.getName=function(){
+                return this.name;
+            }
+            return this;
+        }
+
+        var h3=myhuman3("this is constructor value..")
+        console.log(h3.getName());
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

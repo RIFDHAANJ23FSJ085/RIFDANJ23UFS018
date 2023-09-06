@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inheritance Demo</title>
+    <script>
+
+        function Factory(){
+            this.getName=function(){
+                return this.name;
+            }
+        }
+        function ShoeFactory(name){
+            this.name=name;
+        }
+
+        function CakeFactory(name){
+            this.name=name;
+        }
+
+        var factory=new Factory();
+        ShoeFactory.prototype=factory;
+        ShoeFactory.prototype.constructor=ShoeFactory;
+
+        var adidas=new ShoeFactory("Adidas Shoe..");
+        console.log(adidas.getName());
+
+        var puma=new adidas.constructor("Puma 2k23 special Edition.");
+        console.log(puma.getName());
+
+        CakeFactory.prototype=factory;
+        CakeFactory.prototype.constructor=CakeFactory;
+
+        var ibaco=new CakeFactory("ibaco IceCream Cake");
+        console.log(ibaco.getName());
+
+        var bakery=new ibaco.constructor("Bakery Soft Sake/Dark Forest");
+        console.log(bakery.getName());
+    </script>
+</head>
+<body>
+    ctrl+shift+i -> shortcut for Developer Tools.
+</body>
+</html>

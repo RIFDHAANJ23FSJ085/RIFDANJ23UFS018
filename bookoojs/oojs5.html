@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        function Human(name,age){
+            this.name=name;
+            this.age=age;
+            this.isValid=function(){
+                if(this.age>18){
+                    return this.name+"is Allowed";
+                }
+                else{
+                    return this.name+"is Not Allowed";
+                }
+            }
+        }
+        var rifdhan=new  Human("Rifdhan",21);
+        console.log(rifdhan.isValid());
+
+//open close principle - without accessing the function code,still you
+//can extend the function with more properties.
+
+// using  prototype keyword
+Human.prototype.getName=function(){
+    return this.name;
+}
+console.log(rifdhan.getName());
+
+// Deep Copying
+
+var ilyas=new rifdhan.constructor("ilyas",24);
+console.log(ilyas.isValid());
+console.log(ilyas.getName());
+
+//Association - Encapsulation
+
+function display(){
+    console.log(this.name+":"+this.age);
+}
+function Person(name,age){
+    this.name=name;
+    this.age=age;
+    this.display=display;
+}
+var p=new Person("Javid",23);
+p.display();
+
+// Inheritance // specialization.
+function Hall(){
+    this.display=function(){
+        console.log(this.name);
+    }
+}
+
+function PartyHall(name){
+    this.name=name;
+}
+
+function MarriageHall(name){
+    this.name=name;
+}
+
+var hall=new Hall();
+PartyHall.prototype=hall;
+PartyHall.prototype.constructor=PartyHall;
+
+MarriageHall.prototype=hall;
+MarriageHall.prototype.constructor=MarriageHall;
+
+var ph=new PartyHall("BirthDay Party Hall.");
+ph.display();
+
+var mh=new MarriageHall("Rifdhan Marriage Function");
+mh.display();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

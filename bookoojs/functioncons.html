@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        function myHuman(name){
+            this.name=name;
+            this.getName=function(){
+                return this.name;
+            }
+        }
+
+        var h4=new myHuman("Rifdhan Function Constructor ");
+        console.log(h4.getName());
+
+
+        function myHuman3(name,age){
+            this.name=name;
+            this.age=age;
+            this.getDetails=function(){
+                return this.name+" age is "+this.age
+            }
+        }
+
+        var hh=new myHuman3("Rifdhan",20);
+        console.log(hh.getDetails());
+
+        myHuman3.prototype.getAge=function(){
+            return this.age;
+        }
+
+        console.log(hh.getAge());
+
+        var h6=new window["myHuman3"]("Hamdhan",25);
+        console.log(h6.getDetails());
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

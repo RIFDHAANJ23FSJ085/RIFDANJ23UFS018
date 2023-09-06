@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        // function Employee(ename,deptname){
+        //     this.name=ename;
+        //     this.Department=deptname;
+        //     this.getDetails=function(){
+        //         this.name+"  "+this.deptname;
+        //     }
+        // }
+
+        // function Department(deptname){
+        //     this.dname=deptname;
+        //     return dname;
+        // }
+
+        // var emp=new Employee("rifdhan","Uiux")
+        // console.log(emp.getDetails())
+
+        function Department(name,deptname){
+            this.name=name;
+            this.deptname=deptname;
+            this.details=Details;
+        }
+        function Details(){
+            console.log(this.name+" "+this.deptname);
+        }
+
+        var ds=new Department("Rifdhan","Uiux");
+        ds.details();
+
+        var rs=new ds.constructor("Hamdhan","Marine");
+        rs.details();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
