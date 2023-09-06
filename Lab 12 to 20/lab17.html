@@ -1,0 +1,50 @@
+<html>
+
+<head>
+<title>jQuery Labs</title>
+
+    <link rel="stylesheet" href="css/jquery.mobile-1.3.1.css" />
+    <script src="jquery/jquery-1.9.1.js"></script>
+    <script src="jquery/jquery.mobile-1.3.1.js"></script>
+
+<script type="text/javascript">
+    $(function(){
+    	//jQuery code here
+    	$("div.tabbed a").click(function(){
+            $(this).parent().children().last().load(this.href);
+
+            var last=$(this).parent().data("last_selected");
+            if (last) last.removeClass("tabSelected");
+            $(this).parent().data("last_selected",$(this));
+            $(this).addClass("tabSelected");
+
+            return false;
+        })
+        $("div.tabbed a:first-child").first().click();
+    });
+</script>
+
+    <style type="text/css">
+        .tabselected{
+            background: grey;
+            border-style:solid ;
+            border-width: 1px;
+            border-color: black;
+        }
+    </style>
+
+</head>
+
+<body>
+<!-- Body HTML here -->
+
+<div class="tabbed">
+    <a href="news.html">News</a> <a href="event.html">Event</a> <a
+    href="safety.html">Safety</a>
+    <div>
+    <!--Content will go here-->
+    </div>
+    </div>
+</body>
+
+</html>

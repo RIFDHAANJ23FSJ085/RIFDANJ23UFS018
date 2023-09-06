@@ -1,0 +1,51 @@
+<html>
+
+<head>
+<title>jQuery Labs</title>
+
+    <script src="jquery-1.9.1.js"></script>
+
+<script type="text/javascript">
+    $(function(){
+    	//jQuery code here
+    	
+    });
+
+	function checkForm(){
+		var result=true;
+		$("input[type='text'],input[type='password']");
+		$("input[type='text'], input[type='password']").each(function (idx) {
+			if(this.value.length==0){
+				result=false;
+				$(this).addClass("inputErr");
+			}else{
+				$(this).removeClass("inputErr");
+			}
+
+		});
+		return result;
+	}
+
+</script>
+
+<style type="text/css">
+.inputErr {
+	background: yellow;
+	border-style: solid;
+	border-width: 2px;
+	border-color: red;
+}
+</style>
+
+</head>
+
+<body>
+<!-- Body HTML here -->
+<form method="post" onsubmit="return checkForm();">User ID:<br />
+<input type="text" name="userId" id="userId" /><br />
+Password:<br />
+<input type="password" name="password" id="password" /><br />
+<input type="submit" value="Login" /></form>
+</body>
+
+</html>

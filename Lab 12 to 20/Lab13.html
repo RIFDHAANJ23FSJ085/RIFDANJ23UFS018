@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script type="text/javascript" src="jquery-1.10.2.min.js"> </script>
+        <script type="text/javascript">
+     $(function(){
+        $("p").each(function(index){
+            $(this).text("your Id is : "+this.id+" and index: "+index);
+        });
+        $(".highlighted").css("background","blue");
+        $("div.box").css("border-style","solid");
+    $("div.box").css("border-width", "2px")
+
+    $("div.box div:first-child").css("background" ,"black");
+    $("div.box div:first-child").css("color","white");
+
+    
+   
+     });
+     $(function(){
+        var box=$("div.box");
+        box.css("border-style","solid");
+        box.css("border-width","2px");
+        var title=$("div.box div:first-child");
+        title.css("background","black");
+        title.css("color","white");   
+     })
+
+
+     
+    </script>
+</head>
+<body>
+    <p id="p1"></p>
+    <p id="p2" class="highlighted"></p>
+
+    <div class="box">
+        <div>This is a title</div>
+        <div> This is the box <br/>
+        Body</div>
+    </div>
+
+    <p>Some Other content</p>
+    <div class="box">
+        <div>Company News</div>
+        <ul>
+            <li>Stock price has gone up</li>
+            <li>Tomorrow is a holiday.</li>
+        </ul>
+    </div>
+    
+</body>
+</html>

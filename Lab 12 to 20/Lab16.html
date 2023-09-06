@@ -1,0 +1,68 @@
+<html>
+
+<head>
+<title>jQuery Labs</title>
+
+    <script src="jquery-1.9.1.js"></script>
+
+<script type="text/javascript">
+    $(function(){
+    	//jQuery code here
+        $("form").submit(checkForm);
+    	$("#messages").hide();
+    $("input[type='text'], input[type='password']").blur(function() {
+checkForm();
+});
+          
+    });
+
+	function checkForm(){
+		var result=true;
+        $(".errorMsg").remove();
+		$("input[type='text'],input[type='password']");
+        $("#messageList").append(
+            "<li class='errorMsg'>Input can not be empty: "+this.name+"</li>");
+		$("input[type='text'], input[type='password']").each(function (idx) {
+			if(this.value.length==0){
+				result=false;
+				$(this).addClass("inputErr");
+			}else{
+				$(this).removeClass("inputErr");
+			}
+
+		});
+        if(result==false){
+            $("#messages").show();
+
+        }else{
+            $("#messages").hide();
+        }
+		return result;
+	}
+
+</script>
+
+<style type="text/css">
+.inputErr {
+	background: yellow;
+	border-style: solid;
+	border-width: 2px;
+	border-color: red;
+}
+</style>
+
+</head>
+
+<body>
+    <div id="messages">
+        <ul id="messageList"></ul>
+    </div>
+<!-- Body HTML here -->
+<form method="post" onsubmit="return checkForm();">User ID:<br />
+<input type="text" name="userId" id="userId" /><br />
+Password:<br />
+<input type="password" name="password" id="password" /><br />
+<input type="submit" value="Login" /></form>
+</body>
+
+</html>

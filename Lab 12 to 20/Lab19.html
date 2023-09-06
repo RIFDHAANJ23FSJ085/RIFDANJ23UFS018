@@ -1,0 +1,49 @@
+<!doctype html>
+ 
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>jQuery UI Lab: Draggable and Droppable</title>
+  <script src="/jquery/jquery-1.10.2.min.js"></script>  
+  <script src="/jquery/jquery-ui.js"></script>
+  
+  
+  <style>
+  #draggable { width: 90px; height: 90px; padding: 0.5em; float: left; margin: 10px 10px 10px 0; }
+  #droppable { width: 150px; height: 150px; padding: 0.5em; float: left; margin: 10px; }
+  .drag {background:red; color:white}
+  .drop {background:green; color:white}
+   /* Add droppable object's style here */
+    
+   .highlighted{background: blue;}
+  </style>
+  <script>
+  $(function() {
+    $( "#draggable" ).draggable();
+    $( "#droppable" ).droppable({
+      out:function(event,ui){
+        alert("I'm out of here");
+      },
+      drop: function( event, ui ) {
+	  // Add droppable object styling code here   
+    $(this).addClass("highlighted");     
+     
+  }	         
+    });
+    
+  });
+  
+  </script>
+</head>
+<body>
+ 
+<div id="draggable" class="drag">
+  <p style="text-align:center">Draggable Object</p>
+</div>
+ 
+<div id="droppable" class="drop">
+  <p style="text-align:center">Droppable Object (Target)</p>
+</div>
+ 
+</body>
+</html>

@@ -1,0 +1,116 @@
+<html>
+
+<head>
+<title>jQuery Labs</title>
+
+    <link rel="stylesheet" href="jquery.mobile-1.3.1.css" />
+    <script src="jquery-1.9.1.js"></script>
+    <script src="jquery.mobile-1.3.1.js"></script>
+
+<script type="text/javascript">
+
+    var imageList=null;
+    $(function(){
+    	//jQuery code here
+        $("#gallery img").load(sizeImage);
+        $("#gallery img").click(showImage);
+        // showImage();
+        $.getJSON("/lab/image_list.txt", function(data) {
+imageList = data;
+});
+});
+    
+  
+
+var idx=-1;
+
+function showImage(){
+    ++idx;
+
+    if(idx>=imageList.length){
+        idx=0;
+    }
+    if(idx<imageList.length){
+        var imgE=$("#gallery img").get(0);
+
+        imgE.style.height="auto";
+        imgE.style.width="auto";
+
+        imgE.src=imageList[idx].src;
+    }
+}
+
+function sizeImage(){
+    var imgE=$("#gallery img").get(0);
+     var yScale=imgE.height/window.innerHeight;
+     var xScale=imgE.width/window.innerWidth;
+
+     // pick the maximum scale
+     if(yScale>=xScale){
+        if(yScale>1){
+        imgE.style.height=window.innerHeight;
+        imgE.style.width='auto';
+     }else{
+        if(xScale>1){
+            imgE.style.width=window.innerWidth;
+        imgE.style.height='auto';  
+        }
+     }
+}
+var caption = $("#gallery div");
+caption.text(imageList[idx].caption);
+caption.fadeIn(300).delay(3000).fadeOut(300)
+
+}
+
+var imageList = [
+{src: "annie.jpg", caption: "Annie the cat"},
+{src: "cave.jpg", caption: "Sea cave"},
+{src: "desert.jpg", caption: "Neat desert scene"},
+{src: "poppy.jpg", caption: "California poppy field"}
+]
+
+</script>
+
+<style type="text/css">
+    *{padding: 0;margin: 0;}
+    body{background: black;}
+    #gallery{
+        text-align: center;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        padding: 0px;
+    }
+
+    #gallery div{
+        width: 300px;
+position: relative;
+top: -50px;
+left: 50%;
+margin-left: -150px;
+border-width: 2px;
+border-color: white;
+border-style: solid;
+border-radius: 5px;
+z-index: 99;
+color: white;
+text-shadow: black 2px 2px 0px;
+font-family: Sans-serif;
+font-style: bold;
+font-size: 1.5em;
+    }
+</style>
+
+</head>
+
+<body>
+<!-- Body HTML here -->
+
+<div id="gallery">
+    <img src="#" />
+    <div>Caption here</div>
+</div>
+
+</body>
+
+</html>

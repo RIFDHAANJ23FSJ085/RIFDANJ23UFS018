@@ -1,0 +1,53 @@
+<html>
+
+<head>
+<title>jQuery Labs</title>
+
+    <link rel="stylesheet" href="jquery.mobile-1.3.1.css" />
+    <script src="jquery-1.9.1.js"></script>
+    <script src="jquery.mobile-1.3.1.js"></script>
+
+<script type="text/javascript">
+    $(function(){
+    	//jQuery code here
+    	$("tbody tr:even").css("background-color", "grey");
+		$("tbody tr:odd").css("background-color", "yellow")
+		$("thead tr").css("background-color", "black");
+		$("thead tr").css("color", "white");
+    });
+</script>
+
+</head>
+
+<body>
+<!-- Body HTML here -->
+<table border="1">
+<thead>
+	<tr>
+		<th>Name</th>
+		<th>Age</th>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+		<td>John Doe</td>
+		<td>19</td>
+	</tr>
+
+	<tr>
+		<td>Jane Doe</td>
+		<td>21</td>
+	</tr>
+	<tr>
+		<td>Mary Doe</td>
+		<td>22</td>
+	</tr>
+	<tr>
+		<td>Superman</td>
+		<td>222</td>
+	</tr>
+</tbody>
+</table>
+</body>
+
+</html>
