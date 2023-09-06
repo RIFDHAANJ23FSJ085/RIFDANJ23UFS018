@@ -1,0 +1,17 @@
+/*** CSS3: VQS Code 04.14 ***/
+body { 
+	color: charcoal;
+	font: normal 1.5em/1 helvetica, arial, sans-serif;
+	background: silver url('alice23c.gif') no-repeat center 0;
+	padding: 120px 20px; }
+h1 { 
+	color: purple; 
+	font-size: 1.5em; }
+h2 {
+	color: black; 
+	font-size: 1.25em; }
+p {	
+	line-height: 2;  
+	font-size: 1em; }
+h2 .chaptertitle {
+	font-family: Corbel, Helvetica, Arial, sans-serif; } 

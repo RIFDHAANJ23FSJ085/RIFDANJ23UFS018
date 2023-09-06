@@ -1,0 +1,9 @@
+/*** CSS3: VQS Code 04.15 ***/
+/*** Medium Device Styles ***/
+body { 
+	color: black;
+	background-color: gray;
+	font-size: 1.25em;
+	padding: 200px 2em; }
+h1 { color: gold; }
+h2 { color: silver; }

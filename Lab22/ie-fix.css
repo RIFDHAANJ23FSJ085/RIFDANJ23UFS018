@@ -1,0 +1,13 @@
+/*** CSS3: VQS Code 14.07 ***/
+
+/*** ie-fix.css ***/
+
+/*** color & background properties ***/
+
+h1 {
+	color: rgb(255,153,153); }
+
+/*** box properties ***/
+
+article,aside,canvas,details,dialog,eventsource,figure,footer,header,hgroup,mark,menu,meter,nav,output,progress,section,time,video { display: block; }
+

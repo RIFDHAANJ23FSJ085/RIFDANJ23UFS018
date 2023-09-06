@@ -1,0 +1,12 @@
+/*** CSS3: VQS Code 04.16 ***/
+/*** Large Device Styles ***/
+
+body { 
+	color: silver;
+	font: normal 1.1em/2 georgia,times,serif;
+	background: black url('alice23b.gif') no-repeat 0 0;
+	padding: 200px 175px;}
+h1 { 
+	color: red;
+	font-style: italic; }
+h2 { color: gray; }

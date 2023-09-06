@@ -1,0 +1,10 @@
+/*** CSS3: VQS Code 04.17 ***/
+/*** For Print ***/
+
+body { 
+	color: rgb(0,0,0);
+	background: white url('alice23a.gif') no-repeat 0 0;
+	padding: 200px 0 0 175px;
+}
+h1 { color: gray; }
+p { font: normal 12pt/2 Constantia, palatino, times, "times new roman", serif; }
