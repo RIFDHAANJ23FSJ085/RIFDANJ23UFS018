@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var myvideo=document.getElementById("video1");
+   
+   function playPause(){
+    if(myvideo.paused)
+    myvideo.play();
+else
+myvideo.pause();
+   }
+   function makeBig() {
+    myvideo.width=560;
+   }
+   function makeNormal() {
+    myvideo.width=420;
+   }
+   function makeSmall() {
+    myvideo.width=320;
+   }
+   </script>
+</head>
+<body>
+    <div style="text-align: center;">
+    <button onclick="playPause()">play/pause</button>
+    <button onclick="makeBig()">big</button>
+        <button onclick="makeSmall()">Small</button>
+        <button onclick="makeNormal()">Normal</button>
+        <br><br>
+        <video id="video1" width="420">
+            <source src="JAVASCRIPT TAMIL UNIT1 1.mp4" type="video.mp4">
+        </video>
+    </div>
+</body>
+</html>

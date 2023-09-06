@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        // var audio=document.querySelector("audio");
+        // audio.play;
+        // audio.pause;
+        // audio.paused;
+        // audio.currentTime;
+        // audio.duration;
+        // audio.volume;
+
+        var x=document.getElementById("myaudio");
+
+        function playAudio() {
+            x.play();
+        }
+
+        function pauseAudio() {
+            x.pause();
+        }
+        
+
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <audio id="myaudio" source src="Alan Walker & K-391 - Ignite ft. Julie Bergan & Seungri.mp3" ></audio>
+        <p>Click The Button to play or pause the audio.</p>
+    <button onclick="playAudio()" >Play Audio</button>
+        <button onclick="pauseAudio()">Pause Audio</button>
+
+</body>
+</html>
