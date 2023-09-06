@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<head>
+<title>jQuery with Bootstrap Components Labs</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+
+<script type="text/javascript">
+   function hide(id) {
+    var ref=$("#"+id);
+    var text=ref.html;
+    alert("About to hide the ' "+text+" ' message");
+    ref.hide(slow);
+   }
+
+   function show(id) {
+    var ref=$("#"+id);
+    alert("About to show the message");
+    var showTimeMs=5000;
+    ref.show(showTimeMs);
+   }
+
+   function addAGlyphicon(glyphiconClass) {
+    $("#starId").addClass(glyphiconClass);
+   }
+
+   function removeAGlyphicon(glyphiconClass) {
+    $("#starId").removeClass(glyphiconClass);
+   }
+</script>
+</head>
+<body>
+    <div class="container" style="width: 80%">
+
+        <div id="danger" class="alert alert-danger" style="display: none;">Alert!</div>
+
+        <div class="btn-toolbar" role="toolbar">
+            <button type="button" class="btn btn-default btn-sm" onclick="show('danger');">Show the message ...</button>
+            <button type="button" class="btn btn-default btn-sm" onclick="hide('danger');">Hide the message ...</button>
+            <button type="button" class="btn btn-default btn-sm" onclick="addAGlyphicon('glyphicon glyphicon-star');">
+                <span id="starId"></span> Assign me a star rating!
+            </button>
+            <button type="button" class="btn btn-default btn-sm" onclick="removeAGlyphicon('glyphicon glyphicon-star');">Assign him
+                a starless rating ...</button>
+        </div>
+
+        <script src="js/jquery-1.9.1.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+</body>

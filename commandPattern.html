@@ -1,0 +1,97 @@
+<html>
+    <head>
+        <script>
+
+            function Tv(){
+                this.av1=function(){
+                    console.log("Av1..Mode");
+                }
+                this.av2=function(){
+                    console.log("Av2..Mode.")
+                }
+            }
+
+            function FireStick(){
+                this.newsChannel=function(){
+                    console.log("News Channel Selected..")
+                }
+                this.SerialChannel=function(){
+                    console.log("Serial Channel Selected.");
+                }
+            }
+
+            function Ac(){
+                this.acOn=function(){
+                    console.log("Ac Switched on..")
+                }
+                this.acOff=function(){
+                    console.log("Ac Switched Off.");
+                }
+            }
+
+            function soundx(){
+                this.increaseVolume=function(){
+                    console.log("Volume Increased..")
+                }
+                this.DecreasedVolume=function(){
+                    console.log("Volume Decreased")
+                }
+            }
+
+            function DummyCommand(){
+                this.execute=function(){
+                    console.log("I am Dummy Yet to be operate..")
+                }
+            }
+
+            function FatherTvCommand(){
+                this.execute=function(){
+                    var tv=new Tv();
+                    var fs=new FireStick();
+                    var aircon=new Ac();
+                    var sb=new soundx();
+
+                    console.log("Father News Channel command initiated..");
+
+                    tv.av1();fs.newsChannel();ac.acOn();sd.increaseVolume();
+
+                    console.log("Father news Tv on... enjoy the news my master..");
+
+                }
+            }
+
+            function MotherTvCommand(){
+                this.execute=function(){
+                    var tv=new Tv();
+                    var fs=new FireStick();
+                    var aircon=new Ac();
+                    var sb=new soundx();
+
+                    console.log("Mother Serial Channel Command Initiated.");
+                    tv.av2().fs.SerialChannel().ac.acOff().sb.DecreasedVolume();
+
+                    console.log("Mother Serial channel on..Enjoy Queen.")
+                }
+            }
+
+            function universalRemote(){
+                var command=null;
+                this.init()=function(){
+                    this.command=new MotherTvCommand();
+                }
+                this.executeCommand=function(){
+                    this.command.execute();
+                }
+
+                var ur=universalRemote();
+                ur.init();
+                ur.executeCommand();
+            }
+
+
+
+
+
+        </script>
+    </head>
+</html>

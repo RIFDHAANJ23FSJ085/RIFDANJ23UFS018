@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Responsive Orientation</title>
+<style>
+.portrait {
+	color: red;
+	font-size: 0.75em;
+}
+
+.landscape {
+	color: blue;
+	font-size: 0.75em;
+}
+
+/* we are using media 'all' type to cover all types */
+
+@media all and (orientation:portrait){
+    .portrait{color:red;font-size:1.25em; }
+    .landscape{display:none;}
+}
+@media all and (orientation:landscape){
+    .landscape {color:blue;font-size:1.25em; }
+    .portrait{display:none;}
+}
+
+.section1 {
+	display: none;
+}
+
+.section2 {
+	
+}
+
+table,th {
+	border: 1px solid black;
+	border-collapse: collapse;
+}
+
+th,td {
+	padding: 5px;
+}
+</style>
+</head>
+<body>
+    <div class="section1">
+        <h2>Portrait / Landscape Orientation</h2>
+        <p class="portrait">
+            You should see this line in the <u><i>portrait</i></u> device orientation mode
+        <p>
+        <p class="landscape">
+            You should see this line in the <u><i>landscape</i></u> device orientation mode
+        <p>
+    </div>
+
+    <div class="section2">
+        <h2>Responding to 3D Orientation</h2>
+        <table>
+            <tr>
+                <th>Event Supported
+                <th id="doEvent">
+            </tr>
+            <tr>
+                <td>Direction [alpha]</td>
+                <td id="doDirection"></td>
+            </tr>
+            <tr>
+                <td>Tilt Front/Back [beta]</td>
+                <td id="doTiltFB"></td>
+            </tr>
+            <tr>
+                <td>Tilt Left/Right [gamma]</td>
+                <td id="doTiltLR"></td>
+            </tr>
+        </table>
+    </div>
+
+
+<script type="text/javascript">
+init();
+
+function init() {
+  if (window.DeviceOrientationEvent) {
+     document.getElementById("doEvent").innerHTML = "DeviceOrientation";
+     // Listen for the deviceorientation event and handle the raw data
+     window.addEventListener('deviceorientation', function(eventData) {
+        // gamma is the left-to-right tilt in degrees, where right is positive
+        var tiltLR = eventData.gamma;
+
+        // beta is the front-to-back tilt in degrees, where front is positive
+        var tiltFB = eventData.beta;
+
+        // alpha is the compass direction the device is facing in degrees
+        var dir = eventData.alpha
+
+        // call our orientation event handler
+        deviceOrientationHandler(tiltLR, tiltFB, dir);
+     }, false);
+  } else {
+     document.getElementById("doEvent").innerHTML = "Not supported on your device or browser.  Sorry."
+  }
+}
+
+function deviceOrientationHandler(tiltLR, tiltFB, dir) {
+  document.getElementById("doTiltLR").innerHTML = Math.round(tiltLR);
+  document.getElementById("doTiltFB").innerHTML = Math.round(tiltFB);
+  document.getElementById("doDirection").innerHTML = Math.round(dir);
+}
+</script>
+
+</body>
+</html>

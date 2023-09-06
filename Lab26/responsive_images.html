@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+<head>
+<title>Responsive Images</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+img.fluid {  
+    max-width: 100%;
+}
+
+</style>
+<script async type="text/javascript" src="picturefill.js"></script>
+</head>
+<body>
+
+<!--srcset HTML5 property -->
+<img class="fluid" srcset="640px.png 640w, 320px.png 320w, 210px.png 210w" 
+sizes="80vw" alt="The selective image loading demo" />
+
+</body>
+</html>

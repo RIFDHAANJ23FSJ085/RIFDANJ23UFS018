@@ -1,0 +1,85 @@
+<html>
+    <head>
+        <script>
+
+            class Child{
+                play(dog,item){
+                try {
+                    dog.play(item);
+                } catch (e) {
+                    console.log(e);
+                    e.visit();
+                }
+            }
+            }
+
+            class Dog{
+                play(item){
+                    item.exectue();
+                }
+            }
+
+            class Item{
+                exectue(){
+
+                }
+            }
+
+            class Stone extends Item{
+                exectue(){
+                    throw new DogBarkException("You throw i bark");
+                }
+            }
+
+            class Stick extends Item{
+                exectue(){
+                    throw new DogBiteException("You at i bite");
+                }
+            }
+
+            class DogExceptions extends Error{
+                constructor(msg){
+                    super(msg);
+                }
+                visit(){
+                    
+                }
+            }
+
+            class DogBiteException extends DogExceptions{
+                constructor(msg){
+                    super(msg);
+                }
+                visit(){
+                 new Handler911().handleDogBite();   
+                }
+            }
+
+            class DogBarkException extends DogExceptions{
+                constructor(msg){
+                    super(msg);
+                }
+                visit(){
+                     new Handler911().handleDogBark(); 
+                }
+            }
+
+            class Handler911{
+                handleDogBite(){
+                    console.log("take him to hospital")
+                }
+                handleDogBark(){
+                    console.log("he is just playing with his ball");
+                }
+            }
+
+            var Scooby=new Dog();
+            var baby=new Child();
+            var myItem=new Stick();
+
+            baby.play(Scooby.myItem);
+
+
+        </script>
+    </head>
+</html>

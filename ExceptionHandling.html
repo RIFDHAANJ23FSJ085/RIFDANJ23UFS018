@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <script>
+
+try{
+            console.log("Before Exception..");
+            throw new Error("This is an Error Thrown by my Self to prove this code is robust.");
+            
+}catch(error){
+    console.log(error);
+}   
+finally{
+    console.log("Finally block wheather exception arise or not finally block must execute..");
+} 
+console.log("After Exception.");
+        
+        </script>
+    </head>
+</html>
